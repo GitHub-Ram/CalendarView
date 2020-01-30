@@ -222,8 +222,9 @@ extension CalendarView: UICollectionViewDataSource {
         
         if self.marksWeekends {
             let we = indexPath.item % 7
-            let weekDayOption = style.firstWeekday == .sunday ? 0 : 5
-            dayCell.isWeekend = we == weekDayOption || we == 6
+            //let weekDayOption = style.firstWeekday == .sunday ? 0 : 5
+            //dayCell.isWeekend = we == weekDayOption || we == 6
+            dayCell.isWeekend = we == 0
         }
         
         dayCell.eventsCount = self.eventsByIndexPath[indexPath]?.count ?? 0

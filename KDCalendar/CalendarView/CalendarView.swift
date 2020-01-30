@@ -205,7 +205,7 @@ public class CalendarView: UIView {
         self.collectionView.dataSource          = self
         self.collectionView.delegate            = self
         self.collectionView.isPagingEnabled     = true
-        self.collectionView.backgroundColor     = UIColor.clear
+        self.collectionView.backgroundColor     = UIColor.white
         self.collectionView.showsHorizontalScrollIndicator  = false
         self.collectionView.showsVerticalScrollIndicator    = false
         self.collectionView.allowsMultipleSelection         = false

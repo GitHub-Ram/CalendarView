@@ -34,6 +34,7 @@ open class CalendarHeaderView: UIView {
     }
     
     var monthLabel: UILabel!
+    var dayLevelView: UIView!
     
     var dayLabels = [UILabel]()
     
@@ -47,6 +48,11 @@ open class CalendarHeaderView: UIView {
         monthLabel.backgroundColor = UIColor.clear
         self.addSubview(monthLabel)
         
+        dayLevelView = UIView()
+        dayLevelView.translatesAutoresizingMaskIntoConstraints = false
+        dayLevelView.backgroundColor = UIColor.lightGray
+        self.addSubview(dayLevelView)
+        
         for _ in 0..<7 {
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
@@ -59,9 +65,9 @@ open class CalendarHeaderView: UIView {
     
     public func updateStyle() {
         self.monthLabel.textAlignment = NSTextAlignment.center
-        self.monthLabel.font = style.headerFont
-        self.monthLabel.textColor = style.headerTextColor
-        self.monthLabel.backgroundColor = style.headerBackgroundColor
+        self.monthLabel.font = UIFont(name:"Arial-BoldMT", size: 18)
+        self.monthLabel.textColor = UIColor.white
+        self.monthLabel.backgroundColor = UIColor.orange
         
         let formatter = DateFormatter()
         formatter.locale = style.locale
@@ -72,8 +78,8 @@ open class CalendarHeaderView: UIView {
         
         for index in start..<(start+7) {
             let label = dayLabels[i]
-            label.font = style.weekdaysFont
-            label.text = formatter.shortWeekdaySymbols[(index % 7)].capitalized
+            label.font = UIFont(name:"Arial-BoldMT", size: 18)
+            label.text = formatter.veryShortWeekdaySymbols[(index % 7)].capitalized
             label.textColor = style.weekdaysTextColor
             label.textAlignment = .center
             
@@ -100,27 +106,40 @@ open class CalendarHeaderView: UIView {
         }
         
         self.monthLabel?.frame = CGRect(
-            x: 0.0,
-            y: style.headerTopMargin,
-            width: self.bounds.size.width,
+            x: 3,
+            y: style.headerTopMargin-3,
+            width: self.bounds.size.width-6,
             height: self.bounds.size.height
                 - style.headerTopMargin
                 - style.weekdaysHeight
                 - style.weekdaysBottomMargin
                 - style.weekdaysTopMargin
+                - style.monthNavHeight
+                + 3
         )
+        
+        let labelViewFrame = CGRect(
+            x: 3,
+            y: self.bounds.size.height
+                - style.weekdaysBottomMargin
+                - style.weekdaysHeight,
+            width: self.bounds.size.width - 6,
+            height: style.weekdaysHeight
+        )
+        
+        self.dayLevelView.frame = labelViewFrame
         
         var labelFrame = CGRect(
             x: 0.0,
             y: self.bounds.size.height
-                - style.weekdaysBottomMargin
-                - style.weekdaysHeight,
-            width: self.bounds.size.width / 7.0,
+            - style.weekdaysBottomMargin
+            - style.weekdaysHeight,
+            width: (self.bounds.size.width) / 7.0,
             height: style.weekdaysHeight
         )
         
         if isRtl {
-            labelFrame.origin.x = self.bounds.size.width - labelFrame.width
+            labelFrame.origin.x = (self.bounds.size.width) - labelFrame.width
         }
         
         for lbl in self.dayLabels {

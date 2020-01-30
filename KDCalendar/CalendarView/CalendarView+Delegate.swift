@@ -114,16 +114,16 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
     
     func displayDateOnHeader(_ date: Date) {
         let month = self.calendar.component(.month, from: date) // get month
-        
+        let day = self.calendar.component(.day, from: date) // get month
         let formatter = DateFormatter()
         formatter.locale = style.locale
         formatter.timeZone = style.calendar.timeZone
         
         let monthName = formatter.monthSymbols[(month-1) % 12].capitalized // 0 indexed array
-        
+        let dayStrinng = String(day)
         let year = self.calendar.component(.year, from: date)
 
-        self.headerView.monthLabel.text = dataSource?.headerString(date) ?? monthName + " " + String(year)
+        self.headerView.monthLabel.text = dataSource?.headerString(date) ?? dayStrinng + " " + monthName + " " + String(year)
         
         self.displayDate = date
     }
