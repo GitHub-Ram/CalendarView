@@ -35,7 +35,7 @@ open class CalendarHeaderView: UIView {
     
     var monthLabel: UILabel!
     var dayLevelView: UIView!
-    
+    var navView: MonthNavView!
     var dayLabels = [UILabel]()
     
     public override init(frame: CGRect) {
@@ -47,6 +47,11 @@ open class CalendarHeaderView: UIView {
         monthLabel.translatesAutoresizingMaskIntoConstraints = false
         monthLabel.backgroundColor = UIColor.clear
         self.addSubview(monthLabel)
+        
+        navView = MonthNavView()
+        navView.translatesAutoresizingMaskIntoConstraints = true
+        //navView.backgroundColor = UIColor.black
+        self.addSubview(navView)
         
         dayLevelView = UIView()
         dayLevelView.translatesAutoresizingMaskIntoConstraints = false
@@ -116,6 +121,13 @@ open class CalendarHeaderView: UIView {
                 - style.weekdaysTopMargin
                 - style.monthNavHeight
                 + 3
+        )
+        
+        self.navView?.frame = CGRect(
+            x: 3,
+            y: self.monthLabel.frame.height + 4,
+            width: self.bounds.size.width-6,
+            height: style.monthNavHeight
         )
         
         let labelViewFrame = CGRect(

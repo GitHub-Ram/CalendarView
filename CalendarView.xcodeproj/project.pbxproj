@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21199B7C23ED42A600295774 /* MonthNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21199B7B23ED42A600295774 /* MonthNav.xib */; };
+		21199B7F23ED46A700295774 /* MonthNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21199B7D23ED42FC00295774 /* MonthNavView.swift */; };
+		21199B8023ED46C000295774 /* MonthNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21199B7D23ED42FC00295774 /* MonthNavView.swift */; };
+		21199B8123ED46CD00295774 /* MonthNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21199B7B23ED42A600295774 /* MonthNav.xib */; };
 		ADC21D7F208C5DE400200022 /* CalendarView_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = ADC21D7D208C5DE400200022 /* CalendarView_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADC21D82208C5DE400200022 /* CalendarView_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC21D7B208C5DE400200022 /* CalendarView_iOS.framework */; };
 		ADC21D83208C5DE400200022 /* CalendarView_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADC21D7B208C5DE400200022 /* CalendarView_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -69,6 +73,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		21199B7B23ED42A600295774 /* MonthNav.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthNav.xib; sourceTree = "<group>"; };
+		21199B7D23ED42FC00295774 /* MonthNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthNavView.swift; sourceTree = "<group>"; };
 		ADC21D7B208C5DE400200022 /* CalendarView_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CalendarView_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC21D7D208C5DE400200022 /* CalendarView_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarView_iOS.h; sourceTree = "<group>"; };
 		ADC21D7E208C5DE400200022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,6 +199,8 @@
 		BEFD65741ACC074A00ADE917 /* CalendarView */ = {
 			isa = PBXGroup;
 			children = (
+				21199B7B23ED42A600295774 /* MonthNav.xib */,
+				21199B7D23ED42FC00295774 /* MonthNavView.swift */,
 				C7C16A6F1CBBE536004DC8CF /* CalendarView.swift */,
 				FC3FB289200F912000469B6B /* CalendarView+Style.swift */,
 				C7C16A6C1CBBE536004DC8CF /* CalendarDayCell.swift */,
@@ -328,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21199B8123ED46CD00295774 /* MonthNav.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21199B7C23ED42A600295774 /* MonthNav.xib in Resources */,
 				BEFD655A1ACC072000ADE917 /* Main.storyboard in Resources */,
 				BEFD655F1ACC072000ADE917 /* LaunchScreen.xib in Resources */,
 				BEFD655C1ACC072000ADE917 /* Images.xcassets in Resources */,
@@ -364,6 +374,7 @@
 				ADC21D8C208C5DED00200022 /* CalendarHeaderView.swift in Sources */,
 				ADC21D8B208C5DED00200022 /* CalendarFlowLayout.swift in Sources */,
 				ADC21D90208C5DEE00200022 /* CalendarView+Extensions.swift in Sources */,
+				21199B7F23ED46A700295774 /* MonthNavView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +389,7 @@
 				BEFD65551ACC072000ADE917 /* AppDelegate.swift in Sources */,
 				C7EF3F461F9F846000C2DF2D /* CalendarView+DataSource.swift in Sources */,
 				C7EF3F4C1FA1D6F900C2DF2D /* EventsManager.swift in Sources */,
+				21199B8023ED46C000295774 /* MonthNavView.swift in Sources */,
 				C7C16A731CBBE536004DC8CF /* CalendarView.swift in Sources */,
 				C7C16A701CBBE536004DC8CF /* CalendarDayCell.swift in Sources */,
 				C7C16A721CBBE536004DC8CF /* CalendarHeaderView.swift in Sources */,
@@ -451,7 +463,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "CalendarView iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dacostafaro.CalendarView-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -487,7 +499,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "CalendarView iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dacostafaro.CalendarView-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -613,7 +625,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KDCalendar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KD.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -632,7 +644,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KDCalendar/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KD.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

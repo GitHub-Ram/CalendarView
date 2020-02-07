@@ -114,17 +114,26 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
     
     func displayDateOnHeader(_ date: Date) {
         let month = self.calendar.component(.month, from: date) // get month
+        let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: date)
+        let previousMonth = Calendar.current.date(byAdding: .month, value: -1, to: date)
+        let prevMonth = self.calendar.component(.month, from: previousMonth!)
+        let nexMonth = self.calendar.component(.month, from: nextMonth!)
+        
         let day = self.calendar.component(.day, from: date) // get month
         let formatter = DateFormatter()
         formatter.locale = style.locale
         formatter.timeZone = style.calendar.timeZone
         
         let monthName = formatter.monthSymbols[(month-1) % 12].capitalized // 0 indexed array
+        let prevMonthName = formatter.monthSymbols[(prevMonth-1) % 12] //
+        let nextMonthName = formatter.monthSymbols[(nexMonth-1) % 12] //
         let dayStrinng = String(day)
         let year = self.calendar.component(.year, from: date)
 
         self.headerView.monthLabel.text = dataSource?.headerString(date) ?? dayStrinng + " " + monthName + " " + String(year)
-        
+        self.headerView.navView.monthLabel.text = monthName
+        self.headerView.navView.previousBtn.titleLabel?.text = prevMonthName
+        self.headerView.navView.nextBtn.titleLabel?.text = nextMonthName
         self.displayDate = date
     }
 }
