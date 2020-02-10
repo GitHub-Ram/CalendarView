@@ -11,6 +11,8 @@ import UIKit
 @IBDesignable
 open class MonthNavView: UIView {
 
+    @IBOutlet var nextBtn: UIButton!
+    @IBOutlet var previousBtn: UIButton!
     //let calendarView : UIView
     @IBAction func nextBtnClicked(_ sender: Any) {
     }
@@ -38,5 +40,6 @@ open class MonthNavView: UIView {
         
         self.view = view
     }
+    
 }
 

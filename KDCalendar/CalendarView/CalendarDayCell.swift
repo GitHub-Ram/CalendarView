@@ -41,6 +41,13 @@ open class CalendarDayCell: UICollectionViewCell {
         }
     }
     
+    var eventsHolidayCount = 0 {
+        didSet {
+            self.holidayView.isHidden = (eventsHolidayCount == 0)
+            self.setNeedsLayout()
+        }
+    }
+    
     var day: Int? {
         set {
             guard let value = newValue else { return self.textLabel.text = nil }
@@ -130,13 +137,16 @@ open class CalendarDayCell: UICollectionViewCell {
         self.bgView.layer.borderColor = style.cellBorderColor.cgColor
         self.bgView.layer.borderWidth = style.cellBorderWidth
         self.bgView.backgroundColor = style.cellColorDefault
+        self.holidayView.backgroundColor = style.cellColorDefault
         self.textLabel.textColor = style.cellTextColorDefault
         self.eventsCount = 0
+        self.eventsHolidayCount = 0
     }
     
     
     let textLabel   = UILabel()
     let dotsView    = UIView()
+    let holidayView    = UIView()
     let bgView      = UIView()
     
     override init(frame: CGRect) {
@@ -145,7 +155,7 @@ open class CalendarDayCell: UICollectionViewCell {
         
         
         self.dotsView.backgroundColor = style.cellEventColor
-        
+        self.holidayView.backgroundColor = style.cellHolidayEventColor
         self.textLabel.font = style.cellFont
         
         
@@ -155,7 +165,7 @@ open class CalendarDayCell: UICollectionViewCell {
         self.addSubview(self.textLabel)
         
         self.addSubview(self.dotsView)
-        
+        self.addSubview(self.holidayView)
     }
     
     
@@ -178,6 +188,7 @@ open class CalendarDayCell: UICollectionViewCell {
         }
         
         self.bgView.frame           = elementsFrame
+        self.holidayView.frame           = elementsFrame
         self.textLabel.frame        = elementsFrame
         
         let size                            = self.bounds.height * 0.08 // always a percentage of the whole cell
@@ -188,10 +199,13 @@ open class CalendarDayCell: UICollectionViewCell {
         switch style.cellShape {
         case .square:
             self.bgView.layer.cornerRadius = 0.0
+            self.holidayView.layer.cornerRadius = 0.0
         case .round:
             self.bgView.layer.cornerRadius = elementsFrame.width * 0.5
+            self.holidayView.layer.cornerRadius = elementsFrame.width * 0.5
         case .bevel(let radius):
             self.bgView.layer.cornerRadius = radius
+            self.holidayView.layer.cornerRadius = radius
         }
         
         

@@ -120,6 +120,7 @@ public class CalendarView: UIView {
 
     internal var _cachedMonthInfoForSection = [Int:(firstDay: Int, daysTotal: Int)]()
     internal var eventsByIndexPath = [IndexPath: [CalendarEvent]]()
+    internal var eventsHolidayByIndexPath = [IndexPath: [CalendarEvent]]()
     
     public var events: [CalendarEvent] = [] {
         didSet {
@@ -131,6 +132,22 @@ public class CalendarView: UIView {
                 var eventsForIndexPath = eventsByIndexPath[indexPath] ?? []
                 eventsForIndexPath.append(event)
                 eventsByIndexPath[indexPath] = eventsForIndexPath
+            }
+            
+            DispatchQueue.main.async { self.collectionView.reloadData() }
+        }
+    }
+    
+    public var eventsHoliday: [CalendarEvent] = [] {
+        didSet {
+            self.eventsHolidayByIndexPath.removeAll()
+            
+            for event in eventsHoliday {
+                guard let indexPath = self.indexPathForDate(event.startDate) else { continue }
+                
+                var eventsForIndexPath = eventsHolidayByIndexPath[indexPath] ?? []
+                eventsForIndexPath.append(event)
+                eventsHolidayByIndexPath[indexPath] = eventsForIndexPath
             }
             
             DispatchQueue.main.async { self.collectionView.reloadData() }

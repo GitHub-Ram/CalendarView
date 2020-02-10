@@ -132,8 +132,8 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
 
         self.headerView.monthLabel.text = dataSource?.headerString(date) ?? dayStrinng + " " + monthName + " " + String(year)
         self.headerView.navView.monthLabel.text = monthName
-        self.headerView.navView.previousBtn.titleLabel?.text = prevMonthName
-        self.headerView.navView.nextBtn.titleLabel?.text = nextMonthName
+        self.headerView.navView.previousBtn.setTitle(String(prevMonthName.prefix(3)), for: .normal)
+        self.headerView.navView.nextBtn.setTitle(String(nextMonthName.prefix(3)), for: .normal)
         self.displayDate = date
     }
 }
