@@ -44,6 +44,8 @@ open class CalendarDayCell: UICollectionViewCell {
     var eventsHolidayCount = 0 {
         didSet {
             self.holidayView.isHidden = (eventsHolidayCount == 0)
+            self.holidayView.backgroundColor = style.cellHolidayEventColor
+            updateTextColor()
             self.setNeedsLayout()
         }
     }
@@ -77,6 +79,9 @@ open class CalendarDayCell: UICollectionViewCell {
         }
         else {
             self.textLabel.textColor = style.cellTextColorDefault
+        }
+        if !self.holidayView.isHidden{
+            self.textLabel.textColor = .white
         }
     }
     
@@ -162,10 +167,11 @@ open class CalendarDayCell: UICollectionViewCell {
         super.init(frame: frame)
         
         self.addSubview(self.bgView)
+        self.addSubview(self.holidayView)
         self.addSubview(self.textLabel)
         
         self.addSubview(self.dotsView)
-        self.addSubview(self.holidayView)
+        
     }
     
     
@@ -177,7 +183,7 @@ open class CalendarDayCell: UICollectionViewCell {
         
         super.layoutSubviews()
         
-        var elementsFrame = self.bounds.insetBy(dx: 3.0, dy: 3.0)
+        var elementsFrame = self.bounds.insetBy(dx: 7.0, dy: 7.0)
         
         if style.cellShape.isRound { // square of
             let smallestSide = min(elementsFrame.width, elementsFrame.height)
