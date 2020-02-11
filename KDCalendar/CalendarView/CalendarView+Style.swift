@@ -46,6 +46,7 @@ extension CalendarView {
         //Event
         public var cellEventColor            = UIColor.systemGreen
         public var cellHolidayEventColor            = UIColor.systemGreen
+        public var cellAbsentEventColor            = UIColor.red
         //Header
         public var headerHeight: CGFloat     = 140.0
         public var headerTopMargin: CGFloat  = 5.0
@@ -72,7 +73,7 @@ extension CalendarView {
         public var cellTextColorDefault      = UIColor.gray
         public var cellBorderColor           = UIColor.clear
         public var cellBorderWidth           = CGFloat(0.0)
-        public var cellFont                  = UIFont.systemFont(ofSize: 17)
+        public var cellFont                  = UIFont.systemFont(ofSize: 15)
         
         //Today Style
         public var cellTextColorToday        = UIColor.gray

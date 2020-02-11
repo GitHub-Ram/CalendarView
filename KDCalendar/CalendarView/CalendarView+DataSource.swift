@@ -228,7 +228,8 @@ extension CalendarView: UICollectionViewDataSource {
         }
         
         dayCell.eventsCount = self.eventsByIndexPath[indexPath]?.count ?? 0
-        dayCell.eventsHolidayCount = self.eventsByIndexPath[indexPath]?.count ?? 0//self.eventsHolidayByIndexPath[indexPath]?.count ?? 0
+        dayCell.eventsHolidayCount = self.eventsHolidayByIndexPath[indexPath]?.count ?? 0
+        dayCell.eventsAbsentCount = self.eventsAbsentByIndexPath[indexPath]?.count ?? 0
         return dayCell
     }
 }

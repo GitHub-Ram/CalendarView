@@ -50,6 +50,15 @@ open class CalendarDayCell: UICollectionViewCell {
         }
     }
     
+    var eventsAbsentCount = 0 {
+        didSet {
+            self.absentView.isHidden = (eventsAbsentCount == 0)
+            self.absentView.backgroundColor = style.cellAbsentEventColor
+            updateTextColor()
+            self.setNeedsLayout()
+        }
+    }
+    
     var day: Int? {
         set {
             guard let value = newValue else { return self.textLabel.text = nil }
@@ -80,7 +89,7 @@ open class CalendarDayCell: UICollectionViewCell {
         else {
             self.textLabel.textColor = style.cellTextColorDefault
         }
-        if !self.holidayView.isHidden{
+        if !self.holidayView.isHidden || !self.absentView.isHidden || !self.dotsView.isHidden{
             self.textLabel.textColor = .white
         }
     }
@@ -143,6 +152,7 @@ open class CalendarDayCell: UICollectionViewCell {
         self.bgView.layer.borderWidth = style.cellBorderWidth
         self.bgView.backgroundColor = style.cellColorDefault
         self.holidayView.backgroundColor = style.cellColorDefault
+        self.absentView.backgroundColor = style.cellColorDefault
         self.textLabel.textColor = style.cellTextColorDefault
         self.eventsCount = 0
         self.eventsHolidayCount = 0
@@ -152,6 +162,7 @@ open class CalendarDayCell: UICollectionViewCell {
     let textLabel   = UILabel()
     let dotsView    = UIView()
     let holidayView    = UIView()
+    let absentView    = UIView()
     let bgView      = UIView()
     
     override init(frame: CGRect) {
@@ -161,16 +172,19 @@ open class CalendarDayCell: UICollectionViewCell {
         
         self.dotsView.backgroundColor = style.cellEventColor
         self.holidayView.backgroundColor = style.cellHolidayEventColor
+        self.absentView.backgroundColor = style.cellHolidayEventColor
         self.textLabel.font = style.cellFont
         
         
         super.init(frame: frame)
         
         self.addSubview(self.bgView)
+        self.addSubview(self.dotsView)
         self.addSubview(self.holidayView)
+        self.addSubview(self.absentView)
         self.addSubview(self.textLabel)
         
-        self.addSubview(self.dotsView)
+        
         
     }
     
@@ -183,7 +197,7 @@ open class CalendarDayCell: UICollectionViewCell {
         
         super.layoutSubviews()
         
-        var elementsFrame = self.bounds.insetBy(dx: 7.0, dy: 7.0)
+        var elementsFrame = self.bounds.insetBy(dx: 9.0, dy: 9.0)
         
         if style.cellShape.isRound { // square of
             let smallestSide = min(elementsFrame.width, elementsFrame.height)
@@ -195,23 +209,31 @@ open class CalendarDayCell: UICollectionViewCell {
         
         self.bgView.frame           = elementsFrame
         self.holidayView.frame           = elementsFrame
+        self.absentView.frame           = elementsFrame
+        self.dotsView.frame           = elementsFrame
         self.textLabel.frame        = elementsFrame
         
-        let size                            = self.bounds.height * 0.08 // always a percentage of the whole cell
-        self.dotsView.frame                 = CGRect(x: 0, y: 0, width: size, height: size)
-        self.dotsView.center                = CGPoint(x: self.textLabel.center.x, y: self.bounds.height - (2.5 * size))
-        self.dotsView.layer.cornerRadius    = size * 0.5 // round it
+//        let size                            = self.bounds.height * 0.08 // always a percentage of the whole cell
+//        self.dotsView.frame                 = CGRect(x: 0, y: 0, width: size, height: size)
+//        self.dotsView.center                = CGPoint(x: self.textLabel.center.x, y: self.bounds.height - (2.5 * size))
+//        self.dotsView.layer.cornerRadius    = size * 0.5 // round it
         
         switch style.cellShape {
         case .square:
             self.bgView.layer.cornerRadius = 0.0
             self.holidayView.layer.cornerRadius = 0.0
+            self.absentView.layer.cornerRadius = 0.0
+            self.dotsView.layer.cornerRadius = 0.0
         case .round:
             self.bgView.layer.cornerRadius = elementsFrame.width * 0.5
             self.holidayView.layer.cornerRadius = elementsFrame.width * 0.5
+            self.absentView.layer.cornerRadius = elementsFrame.width * 0.5
+            self.dotsView.layer.cornerRadius = elementsFrame.width * 0.5
         case .bevel(let radius):
             self.bgView.layer.cornerRadius = radius
             self.holidayView.layer.cornerRadius = radius
+            self.absentView.layer.cornerRadius = radius
+            self.dotsView.layer.cornerRadius = radius
         }
         
         
