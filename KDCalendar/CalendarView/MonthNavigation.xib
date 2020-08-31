@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,48 +18,79 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diF-Lm-UEb">
-                    <rect key="frame" x="10" y="437" width="66" height="22"/>
-                    <color key="tintColor" white="0.0021181778169999999" alpha="1" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="monn" image="lessthan.circle.fill" catalog="system">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                    </state>
-                    <connections>
-                        <action selector="previousBtnClicked:" destination="-1" eventType="touchUpInside" id="67A-ZJ-09x"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7C-s3-297">
-                    <rect key="frame" x="348" y="437" width="56" height="22"/>
-                    <color key="tintColor" white="0.0021181778169999999" alpha="1" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="mon" image="greaterthan.circle.fill" catalog="system">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                    </state>
-                    <connections>
-                        <action selector="nextBtnClicked:" destination="-1" eventType="touchUpInside" id="XRq-Sg-o3T"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="March" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwY-zH-2Fq">
-                    <rect key="frame" x="183" y="437.5" width="48.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9Zv-Yv-rq5">
+                    <rect key="frame" x="10" y="15" width="394" height="866"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8t-at-b2K">
+                            <rect key="frame" x="0.0" y="0.0" width="131.5" height="866"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_nav" translatesAutoresizingMaskIntoConstraints="NO" id="DKe-gf-Jld">
+                                    <rect key="frame" x="0.0" y="0.0" width="85.5" height="866"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="DKe-gf-Jld" secondAttribute="height" multiplier="1:1" id="LO8-8q-rfV"/>
+                                    </constraints>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diF-Lm-UEb">
+                                    <rect key="frame" x="85.5" y="0.0" width="46" height="866"/>
+                                    <color key="tintColor" white="0.0021181778169999999" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" title="monn">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="previousBtnClicked:" destination="-1" eventType="touchUpInside" id="67A-ZJ-09x"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="diF-Lm-UEb" firstAttribute="height" secondItem="DKe-gf-Jld" secondAttribute="height" id="Quq-Zk-5ZO"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="March" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwY-zH-2Fq">
+                            <rect key="frame" x="131.5" y="0.0" width="131" height="866"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUP-c8-bxX">
+                            <rect key="frame" x="262.5" y="0.0" width="131.5" height="866"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="right" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7C-s3-297">
+                                    <rect key="frame" x="0.0" y="0.0" width="36" height="866"/>
+                                    <color key="tintColor" white="0.0021181778169999999" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" title="mon">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="nextBtnClicked:" destination="-1" eventType="touchUpInside" id="XRq-Sg-o3T"/>
+                                    </connections>
+                                </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_nav" translatesAutoresizingMaskIntoConstraints="NO" id="ZRI-6L-bJc">
+                                    <rect key="frame" x="36" y="0.0" width="95.5" height="866"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="ZRI-6L-bJc" secondAttribute="height" multiplier="1:1" id="r0X-Gh-eam"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="ZRI-6L-bJc" firstAttribute="height" secondItem="Z7C-s3-297" secondAttribute="height" id="lub-bp-Upn"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="diF-Lm-UEb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="H5O-ZV-gPe"/>
-                <constraint firstItem="diF-Lm-UEb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="lo9-NR-QDh"/>
-                <constraint firstItem="pwY-zH-2Fq" firstAttribute="centerY" secondItem="Z7C-s3-297" secondAttribute="centerY" id="r60-9Z-ach"/>
-                <constraint firstAttribute="trailing" secondItem="Z7C-s3-297" secondAttribute="trailing" constant="10" id="sR6-C4-JlC"/>
-                <constraint firstItem="pwY-zH-2Fq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sbL-bT-nih"/>
-                <constraint firstItem="Z7C-s3-297" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="x85-69-30A"/>
+                <constraint firstItem="9Zv-Yv-rq5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="SDP-nn-bDl"/>
+                <constraint firstAttribute="trailing" secondItem="9Zv-Yv-rq5" secondAttribute="trailing" constant="10" id="ZVY-Lx-OGW"/>
+                <constraint firstAttribute="bottom" secondItem="9Zv-Yv-rq5" secondAttribute="bottom" constant="15" id="n5m-s4-7yj"/>
+                <constraint firstItem="9Zv-Yv-rq5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="qoR-8s-D5e"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="139" y="129"/>
         </view>
     </objects>
     <resources>
-        <image name="greaterthan.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="lessthan.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="back_nav" width="30" height="30"/>
+        <image name="next_nav" width="30" height="30"/>
     </resources>
 </document>
