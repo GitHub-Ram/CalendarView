@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "KDCalendar"
-  s.version      = "1.3"
+  s.version      = "1.4"
   s.summary      = "A calendar component with native events supports."
 
   s.description  = <<-DESC
@@ -13,9 +13,9 @@ Pod::Spec.new do |s|
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
-  s.author       = "Michael Michailidis"
+  s.author       = "Ram Kumar"
 
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
 
   s.source       = { :git => "https://github.com/GitHub-Ram/CalendarView.git", :tag => s.version }
 
