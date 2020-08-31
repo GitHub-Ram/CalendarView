@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
   s.name         = "KDCalendar"
-  s.version      = "1.2"
-  s.summary      = "A calendar component with native events support."
+  s.version      = "1.3"
+  s.summary      = "A calendar component with native events supports."
 
   s.description  = <<-DESC
   This is an implementation of a calendar component for iOS written in Swift 4.0. It features both vertical and horizontal layout (and scrolling) and the display of native calendar events.
