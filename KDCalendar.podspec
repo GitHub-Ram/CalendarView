@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "KDCalendar"
-  s.version      = "3.1"
+  s.version      = "3.2"
   s.summary      = "A calendar component with native events supports."
 
   s.description  = <<-DESC
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'EventManager' do |ss|
     ss.source_files = "KDCalendar/CalendarView/**/*.{swift}"
-    ss.resources = "KDCalendar/CalendarView/**/*.{xib}"
+    ss.resources = "KDCalendar/CalendarView/**/*.{xib,png}"
     ss.pod_target_xcconfig = { 'SWIFT_ACTIVE_COMPILATION_CONDITIONS' => 'KDCALENDAR_EVENT_MANAGER_ENABLED' }
   end
 
