@@ -32,7 +32,7 @@ open class MonthNavView: UIView {
     }
 
     func loadViewFromNib() {
-        let bundle = Bundle(for: self.classForCoder)
+        let bundle = Bundle(for: MonthNavView.classForCoder())
         let nib = UINib(nibName: String("NewNav"), bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
         view.frame = bounds
