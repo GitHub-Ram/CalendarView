@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "KDCalendar"
-  s.version      = "2.0"
+  s.version      = "2.1"
   s.summary      = "A calendar component with native events supports."
 
   s.description  = <<-DESC
@@ -22,7 +22,10 @@ Pod::Spec.new do |s|
   s.default_subspec = 'EventManager'
 
   s.subspec 'Core' do |ss|
-    ss.source_files = "KDCalendar/CalendarView/**/*.{swift,xib}"
+    ss.source_files = "KDCalendar/CalendarView/**/*.{swift}"
+    ss.resource_bundles = {
+      '{podName}' => ["KDCalendar/CalendarView/**/*.{xib}"]
+    }
   end
 
   s.subspec 'EventManager' do |ss|
