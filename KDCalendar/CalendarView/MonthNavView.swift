@@ -11,15 +11,15 @@ import UIKit
 @IBDesignable
 open class MonthNavView: UIView {
 
-    @IBOutlet var nextBtn: UIButton!
-    @IBOutlet var previousBtn: UIButton!
-    //let calendarView : UIView
-    @IBAction func nextBtnClicked(_ sender: Any) {
-    }
-    @IBAction func previousBtnClicked(_ sender: Any) {
-        //CalendarView.goToPreviousMonth()
-    }
-    @IBOutlet weak var monthLabel: UILabel!
+//    @IBOutlet var nextBtn: UIButton!
+//    @IBOutlet var previousBtn: UIButton!
+//    //let calendarView : UIView
+//    @IBAction func nextBtnClicked(_ sender: Any) {
+//    }
+//    @IBAction func previousBtnClicked(_ sender: Any) {
+//        //CalendarView.goToPreviousMonth()
+//    }
+//    @IBOutlet weak var monthLabel: UILabel!
     var view: UIView!
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -28,7 +28,7 @@ open class MonthNavView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        //loadViewFromNib()
+        loadViewFromNib()
     }
 
     func loadViewFromNib() {
