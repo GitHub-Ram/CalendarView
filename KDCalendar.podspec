@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
     ss.source_files = "KDCalendar/CalendarView/**/*.{swift}"
     ss.resource_bundles = {
    'KDCalendar' => [
-       "KDCalendar/CalendarView/**/*.{xib}"
+       "KDCalendar/CalendarView/**/*.{xib}",
        "KDCalendar/CalendarView/**/*.{Images.xcassets}"
    ]
  }
