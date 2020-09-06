@@ -37,6 +37,8 @@
 		C7EF3F4A1F9F8DF800C2DF2D /* CalendarView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF3F491F9F8DF800C2DF2D /* CalendarView+Extensions.swift */; };
 		C7EF3F4C1FA1D6F900C2DF2D /* EventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF3F4B1FA1D6F900C2DF2D /* EventsManager.swift */; };
 		F5D2F75F250527D300571E29 /* NewNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D2F75E250527D300571E29 /* NewNav.xib */; };
+		F5D2F76625057A9400571E29 /* next_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D2F76525057A9300571E29 /* next_nav.png */; };
+		F5D2F76825057AA300571E29 /* back_nav.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D2F76725057AA300571E29 /* back_nav.png */; };
 		FC3FB28A200F912000469B6B /* CalendarView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FB289200F912000469B6B /* CalendarView+Style.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +98,8 @@
 		C7EF3F491F9F8DF800C2DF2D /* CalendarView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarView+Extensions.swift"; sourceTree = "<group>"; };
 		C7EF3F4B1FA1D6F900C2DF2D /* EventsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsManager.swift; sourceTree = "<group>"; };
 		F5D2F75E250527D300571E29 /* NewNav.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewNav.xib; sourceTree = "<group>"; };
+		F5D2F76525057A9300571E29 /* next_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = next_nav.png; path = KDCalendar/Images.xcassets/next_nav.imageset/next_nav.png; sourceTree = SOURCE_ROOT; };
+		F5D2F76725057AA300571E29 /* back_nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_nav.png; path = KDCalendar/Images.xcassets/back_nav.imageset/back_nav.png; sourceTree = SOURCE_ROOT; };
 		FC3FB289200F912000469B6B /* CalendarView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarView+Style.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -216,6 +220,8 @@
 		F5D2F7612505387100571E29 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				F5D2F76525057A9300571E29 /* next_nav.png */,
+				F5D2F76725057AA300571E29 /* back_nav.png */,
 				F5D2F75E250527D300571E29 /* NewNav.xib */,
 			);
 			path = Resource;
@@ -350,9 +356,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D2F76625057A9400571E29 /* next_nav.png in Resources */,
 				BEFD655A1ACC072000ADE917 /* Main.storyboard in Resources */,
 				BEFD655F1ACC072000ADE917 /* LaunchScreen.xib in Resources */,
 				F5D2F75F250527D300571E29 /* NewNav.xib in Resources */,
+				F5D2F76825057AA300571E29 /* back_nav.png in Resources */,
 				BEFD655C1ACC072000ADE917 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

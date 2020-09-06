@@ -26,7 +26,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsZ-8a-bwN">
                             <rect key="frame" x="0.0" y="0.0" width="66" height="20"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_nav" translatesAutoresizingMaskIntoConstraints="NO" id="CAG-JZ-3Ft">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_nav.png" translatesAutoresizingMaskIntoConstraints="NO" id="CAG-JZ-3Ft">
                                     <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="oxi-q9-sNW"/>
@@ -67,7 +67,7 @@
                                         <action selector="previousBtnClicked:" destination="-1" eventType="touchUpInside" id="zsw-4W-14l"/>
                                     </connections>
                                 </button>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_nav" translatesAutoresizingMaskIntoConstraints="NO" id="GfY-kp-gMR">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_nav.png" translatesAutoresizingMaskIntoConstraints="NO" id="GfY-kp-gMR">
                                     <rect key="frame" x="36" y="0.0" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="GfY-kp-gMR" secondAttribute="height" multiplier="1:1" id="WJO-v3-BS8"/>
@@ -89,7 +89,7 @@
         </view>
     </objects>
     <resources>
-        <image name="back_nav" width="30" height="30"/>
-        <image name="next_nav" width="30" height="30"/>
+        <image name="back_nav.png" width="30" height="30"/>
+        <image name="next_nav.png" width="30" height="30"/>
     </resources>
 </document>
