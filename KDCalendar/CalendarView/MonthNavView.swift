@@ -23,12 +23,12 @@ open class MonthNavView: UIView {
     var view: UIView!
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        loadViewFromNib()
+        //loadViewFromNib()
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        loadViewFromNib()
+        //loadViewFromNib()
     }
 
     func loadViewFromNib() {
