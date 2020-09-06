@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21199B7C23ED42A600295774 /* MonthNavigation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21199B7B23ED42A600295774 /* MonthNavigation.xib */; };
 		21199B7F23ED46A700295774 /* MonthNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21199B7D23ED42FC00295774 /* MonthNavView.swift */; };
 		21199B8023ED46C000295774 /* MonthNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21199B7D23ED42FC00295774 /* MonthNavView.swift */; };
-		21199B8123ED46CD00295774 /* MonthNavigation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21199B7B23ED42A600295774 /* MonthNavigation.xib */; };
 		ADC21D7F208C5DE400200022 /* CalendarView_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = ADC21D7D208C5DE400200022 /* CalendarView_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADC21D82208C5DE400200022 /* CalendarView_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC21D7B208C5DE400200022 /* CalendarView_iOS.framework */; };
 		ADC21D83208C5DE400200022 /* CalendarView_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADC21D7B208C5DE400200022 /* CalendarView_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -39,7 +37,6 @@
 		C7EF3F4A1F9F8DF800C2DF2D /* CalendarView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF3F491F9F8DF800C2DF2D /* CalendarView+Extensions.swift */; };
 		C7EF3F4C1FA1D6F900C2DF2D /* EventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EF3F4B1FA1D6F900C2DF2D /* EventsManager.swift */; };
 		F5D2F75F250527D300571E29 /* NewNav.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D2F75E250527D300571E29 /* NewNav.xib */; };
-		F5DDA03123F33B0100FCC054 /* MonthNavigation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21199B7B23ED42A600295774 /* MonthNavigation.xib */; };
 		FC3FB28A200F912000469B6B /* CalendarView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3FB289200F912000469B6B /* CalendarView+Style.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +72,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		21199B7B23ED42A600295774 /* MonthNavigation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthNavigation.xib; sourceTree = "<group>"; };
 		21199B7D23ED42FC00295774 /* MonthNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthNavView.swift; sourceTree = "<group>"; };
 		ADC21D7B208C5DE400200022 /* CalendarView_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CalendarView_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC21D7D208C5DE400200022 /* CalendarView_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarView_iOS.h; sourceTree = "<group>"; };
@@ -202,7 +198,6 @@
 		BEFD65741ACC074A00ADE917 /* CalendarView */ = {
 			isa = PBXGroup;
 			children = (
-				21199B7B23ED42A600295774 /* MonthNavigation.xib */,
 				21199B7D23ED42FC00295774 /* MonthNavView.swift */,
 				C7C16A6F1CBBE536004DC8CF /* CalendarView.swift */,
 				FC3FB289200F912000469B6B /* CalendarView+Style.swift */,
@@ -340,7 +335,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21199B8123ED46CD00295774 /* MonthNavigation.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +342,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21199B7C23ED42A600295774 /* MonthNavigation.xib in Resources */,
 				BEFD655A1ACC072000ADE917 /* Main.storyboard in Resources */,
 				BEFD655F1ACC072000ADE917 /* LaunchScreen.xib in Resources */,
 				F5D2F75F250527D300571E29 /* NewNav.xib in Resources */,
@@ -360,7 +353,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5DDA03123F33B0100FCC054 /* MonthNavigation.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

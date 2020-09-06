@@ -8,7 +8,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MonthNavView" customModule="CalendarView"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MonthNavView" customModule="CalendarView" customModuleProvider="target">
+            <connections>
+                <outlet property="monthLabel" destination="mX8-Tt-bSn" id="skB-Ox-zog"/>
+                <outlet property="nextBtn" destination="YUa-F5-uGK" id="iG4-fq-geb"/>
+                <outlet property="previousBtn" destination="1Sb-oH-ZyA" id="2oi-vR-JWp"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -33,6 +39,9 @@
                                     <state key="normal" title="monn">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
+                                    <connections>
+                                        <action selector="previousBtnClicked:" destination="-1" eventType="touchUpInside" id="MPe-p8-9MU"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -54,6 +63,9 @@
                                     <state key="normal" title="mon">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
+                                    <connections>
+                                        <action selector="previousBtnClicked:" destination="-1" eventType="touchUpInside" id="zsw-4W-14l"/>
+                                    </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_nav" translatesAutoresizingMaskIntoConstraints="NO" id="GfY-kp-gMR">
                                     <rect key="frame" x="36" y="0.0" width="20" height="20"/>

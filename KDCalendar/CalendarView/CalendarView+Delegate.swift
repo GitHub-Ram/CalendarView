@@ -131,9 +131,9 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
         let year = self.calendar.component(.year, from: date)
 
         self.headerView.monthLabel.text = dataSource?.headerString(date) ?? dayStrinng + " " + monthName + " " + String(year)
-//        self.headerView.navView.monthLabel.text = monthName
-//        self.headerView.navView.previousBtn.setTitle(String(prevMonthName.prefix(3)), for: .normal)
-//        self.headerView.navView.nextBtn.setTitle(String(nextMonthName.prefix(3)), for: .normal)
+        self.headerView.navView.monthLabel.text = monthName
+        self.headerView.navView.previousBtn.setTitle(String(prevMonthName.prefix(3)), for: .normal)
+        self.headerView.navView.nextBtn.setTitle(String(nextMonthName.prefix(3)), for: .normal)
         self.displayDate = date
     }
 }
